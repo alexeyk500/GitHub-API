@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import classes from './App.module.css'
 import InputComponent from "./InputComponent/InputComponent";
 import ListComponent from "./ListComponent/ListComponent";
+import UserDetailComponent from "./UserDetailComponent/UserDetailComponent";
 
 const DEFAULT_USER_NAME = 'alexeyk500'
 
@@ -24,13 +25,18 @@ function App() {
     <div className={classes.container}>
       <div className={classes.rightPart}>
         <InputComponent
-          userName={findUserName}
-          setUserName={setFindUserName}
+          findUserName={findUserName}
+          setFindUserName={setFindUserName}
         />
         <ListComponent
           findUserName= {findUserName}
           selectedUser = {userNameForDetail}
           onChangeUser={setUserNameForDetail}
+        />
+      </div>
+      <div className={classes.leftPart}>
+        <UserDetailComponent
+          selectedUser = {userNameForDetail}
         />
       </div>
     </div>

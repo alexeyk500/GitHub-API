@@ -1,4 +1,5 @@
 .container {
+  display: flex;
   height: 100vh;
   margin: 0;
   padding: 0;
@@ -8,6 +9,13 @@
 }
 
 .rightPart {
+  width: 30%;
+  padding: 32px;
+}
+
+.leftPart {
+  display: flex;
+  align-items: center;
   width: 30%;
   padding: 32px;
 }

@@ -2,28 +2,34 @@ import React, {useEffect, useState} from 'react';
 import classes from './InputComponent.module.css'
 
 type PropsType = {
-  userName: string
-  setUserName: (userName: string) => void
+  findUserName: string
+  setFindUserName: (userName: string) => void
 }
 
 const InputComponent:React.FC <PropsType> = ({
-  userName,
-  setUserName
+  findUserName,
+  setFindUserName
 }) => {
 
-  const [inputValue, setInputValue]=useState<string>(userName)
+  const [inputValue, setInputValue]=useState<string>(findUserName)
 
   useEffect(()=>{
-    setInputValue(userName)
-  },[userName])
+    setInputValue(findUserName)
+  },[findUserName])
 
   const onChangeInputValue = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(e.target.value)
   }
 
+  const onKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (inputValue) {
+      setFindUserName(inputValue)
+    }
+  }
+
   const onClickButtonFind = () => {
-    if (!!inputValue) {
-      setUserName(inputValue)
+    if (inputValue) {
+      setFindUserName(inputValue)
     }
   }
 
@@ -39,6 +45,7 @@ const InputComponent:React.FC <PropsType> = ({
           className={classes.inputFind}
           value={inputValue}
           onChange={onChangeInputValue}
+          onKeyDown={onKeyPress}
         />
         <button
           className={classes.buttonFind}
