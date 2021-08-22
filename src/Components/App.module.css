@@ -1,0 +1,13 @@
+.container {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-size: 24px;
+  color: #242424;
+  background-color: #bfbfbf;
+}
+
+.rightPart {
+  width: 30%;
+  padding: 32px;
+}

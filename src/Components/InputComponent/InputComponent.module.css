@@ -1,0 +1,21 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 32px;
+}
+
+.title {
+  margin-bottom: 8px;
+}
+
+.inputFind{
+  font-size: 16px;
+  width: 50%;
+  padding: 4px;
+  outline:none;
+}
+
+.buttonFind {
+  font-size: 16px;
+  padding: 4px 16px;
+}
