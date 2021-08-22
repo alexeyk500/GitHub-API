@@ -22,7 +22,7 @@ const InputComponent:React.FC <PropsType> = ({
   }
 
   const onKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
-    if (inputValue) {
+    if (inputValue && e.key === 'Enter') {
       setFindUserName(inputValue)
     }
   }

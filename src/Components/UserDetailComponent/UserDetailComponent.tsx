@@ -32,6 +32,8 @@ const UserDetailComponent:React.FC <PropsType>= ({
           setShowUser(res.data)
         })
         .then(()=>{setIsLoading(false)})
+    } else {
+      setShowUser(null)
     }
   }, [selectedUser])
 

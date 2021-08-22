@@ -14,7 +14,7 @@ type ServerResponseType = {
 type PropsType = {
   findUserName: string,
   selectedUser: string | null,
-  onChangeUser: (userName: string)=>void,
+  onChangeUser: (userName: string | null)=>void,
 }
 
 const ListComponent: React.FC <PropsType> = ({
@@ -38,7 +38,11 @@ const ListComponent: React.FC <PropsType> = ({
   },[findUserName])
 
   const onClickSetSelectUser = (curUser: string) => {
-    onChangeUser(curUser)
+    if (curUser === selectedUser) {
+      onChangeUser(null)
+    } else {
+      onChangeUser(curUser)
+    }
   }
 
   return (
@@ -55,7 +59,6 @@ const ListComponent: React.FC <PropsType> = ({
               <div className={selectedUser === curUser? classes.selectedUser : classes.user}>
                 {curUser}
               </div>
-
             </li>
           )
         })
